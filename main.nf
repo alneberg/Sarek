@@ -352,7 +352,6 @@ process CreateRecalibrationTable {
   BaseRecalibrator \
   --input ${bam} \
   --output ${idSample}.recal.table \
-	--TMP_DIR /tmp \
   -R ${genomeFile} \
   -L ${intervals} \
   --known-sites ${dbsnp} \
