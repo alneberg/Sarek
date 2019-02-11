@@ -8,25 +8,57 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### `Added`
+-   [#712](https://github.com/SciLifeLab/Sarek/pull/712), [#718](https://github.com/SciLifeLab/Sarek/pull/718) - Added possibilities to run Sarek with `conda`
+
+### `Changed`
+
+-   [#710](https://github.com/SciLifeLab/Sarek/pull/710) - Improve release checklist and script
+-   [#711](https://github.com/SciLifeLab/Sarek/pull/711) - Improve configuration priorities
+-   [#719](https://github.com/SciLifeLab/Sarek/pull/719) - `vepCacheVersion` is now defined in `conf/genomes.config` or `conf/igenomes.config`
+-   [#719](https://github.com/SciLifeLab/Sarek/pull/719) - `snpeff` and `vep` containers are now built with conda
+-   [#716](https://github.com/SciLifeLab/Sarek/pull/716) - Update paths to containers and iGenomes
+
+### `Added`
+-   [#719](https://github.com/SciLifeLab/Sarek/pull/719) - Possibility to use cache wen annotating with `snpEff` and `VEP`
+-   [#719](https://github.com/SciLifeLab/Sarek/pull/719) - New `--annotation_cache`, `--snpEff_cache`, `--vep_cache` parameters
+-   [#719](https://github.com/SciLifeLab/Sarek/pull/719) - Helper script to download `snpeff` and `VEP` cache files
+-   [#719](https://github.com/SciLifeLab/Sarek/pull/719) - Annotation documentation
+
+### `Removed`
+-   [#715](https://github.com/SciLifeLab/Sarek/pull/715) - Remove `defReferencesFiles` function from `buildReferences.nf`
+-   [#719](https://github.com/SciLifeLab/Sarek/pull/719) - `snpEff` base container is no longer used
+-   [#721](https://github.com/SciLifeLab/Sarek/pull/721) - Remove COSMIC docs
+
+### `Fixed`
+-   [#720](https://github.com/SciLifeLab/Sarek/pull/720) - bamQC is now run on the recalibrated bams, and not after MarkDuplicates
+
+## [2.2.2] - 2018-12-19
+
+### `Added`
 
 -   [#671](https://github.com/SciLifeLab/Sarek/pull/671) - New `publishDirMode` param and docs
 -   [#673](https://github.com/SciLifeLab/Sarek/pull/673), [#675](https://github.com/SciLifeLab/Sarek/pull/675),  [#676](https://github.com/SciLifeLab/Sarek/pull/676) - Profiles for BinAC and CFC clusters in Tübingen
 -   [#679](https://github.com/SciLifeLab/Sarek/pull/679) - Add container for `CreateIntervalBeds`
 -   [#692](https://github.com/SciLifeLab/Sarek/pull/692), [#697](https://github.com/SciLifeLab/Sarek/pull/697) - Add AWS iGenomes possibilities (within `conf/igenomes.conf`)
 -   [#694](https://github.com/SciLifeLab/Sarek/pull/694) - Add monochrome and grey logos for light or dark background
+-   [#698](https://github.com/SciLifeLab/Sarek/pull/698) - Add btb profile for munin server
 -   [#702](https://github.com/SciLifeLab/Sarek/pull/702) - Add font-ttf-dejavu-sans-mono `2.37` and fontconfig `2.12.6` to container
+-   [#722](https://github.com/SciLifeLab/Sarek/pull/722) - Update `Sarek-data` submodule
+-   [#722](https://github.com/SciLifeLab/Sarek/pull/722) - Add path to ASCAT `.gc` file in `igenomes.config`
 
 ### `Changed`
 
 -   [#678](https://github.com/SciLifeLab/Sarek/pull/678) - Changing VEP to v92 and adjusting CPUs for VEP
 -   [#663](https://github.com/SciLifeLab/Sarek/pull/663) - Update `do_release.sh` script
 -   [#671](https://github.com/SciLifeLab/Sarek/pull/671) - publishDir modes are now params
--   [#677](https://github.com/SciLifeLab/Sarek/pull/677) - Update docs
+-   [#677](https://github.com/SciLifeLab/Sarek/pull/677), [#698](https://github.com/SciLifeLab/Sarek/pull/698), [#703](https://github.com/SciLifeLab/Sarek/pull/703) - Update docs
 -   [#679](https://github.com/SciLifeLab/Sarek/pull/679) - Update old awsbatch configuration
 -   [#682](https://github.com/SciLifeLab/Sarek/pull/682) - Specifications for memory and cpus for awsbatch
 -   [#693](https://github.com/SciLifeLab/Sarek/pull/693) - Qualimap bamQC is now ran after mapping and after recalibration for better QC
 -   [#700](https://github.com/SciLifeLab/Sarek/pull/700) - Update GATK to `4.0.9.0`
--   [#702](https://github.com/SciLifeLab/Sarek/pull/702) - update FastQC to `0.11.8`
+-   [#702](https://github.com/SciLifeLab/Sarek/pull/702) - Update FastQC to `0.11.8`
+-   [#705](https://github.com/SciLifeLab/Sarek/pull/705) - Change `--TMP_DIR` by `--tmp-dir` for GATK `4.0.9.0` BaseRecalibrator
+-   [#706](https://github.com/SciLifeLab/Sarek/pull/706) - Update TravisCI testing
 
 ### `Fixed`
 
@@ -35,6 +67,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 -   [#679](https://github.com/SciLifeLab/Sarek/pull/679) - Add publishDirMode for `germlineVC.nf`
 -   [#700](https://github.com/SciLifeLab/Sarek/pull/700) - Fix [#699](https://github.com/SciLifeLab/Sarek/issues/699) missing DP in the FORMAT column VCFs for MuTect2
 -   [#702](https://github.com/SciLifeLab/Sarek/pull/702) - Fix [#701](https://github.com/SciLifeLab/Sarek/issues/701)
+-   [#705](https://github.com/SciLifeLab/Sarek/pull/705) - Fix [#704](https://github.com/SciLifeLab/Sarek/issues/704)
 
 ## [2.2.1] - 2018-10-04
 
